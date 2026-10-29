@@ -1,0 +1,110 @@
+<script src="{{ url_for('static', filename='volt/vendor/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script src="{{ url_for('static', filename='volt/vendor/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<header class="header-global">
+    <nav id="navbar-main"
+         class="navbar navbar-main navbar-expand-lg navbar-theme-primary bg-white fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <lottie-player
+                    src="https://assets1.lottiefiles.com/packages/lf20_wEt2nn.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 70px; height: 50px;"
+                    loop
+                    autoplay>
+                </lottie-player>
+                <span style="font-size: 18px;">MyProctor.ai</span>
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars"
+                   style="color:#1c2540; font-size:28px;"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="active6" href="/login">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="active5" href="/register">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="active8" href="/contact">
+                            <i class="fas fa-phone-alt"></i> Contact Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="active7" href="/faq">
+                            <i class="fas fa-question"></i> FAQ
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+   function funLogout () {
+swal.fire({
+  title: 'Are you sure?',
+  text: "Do you really want to logout?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, Logout me!',
+  cancelButtonText: 'No!',
+  confirmButtonColor: '#d33',
+  cancelButtonColor: '#202124',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+              $.ajax({
+                    type: "POST",
+                    url: "/logout",
+                    success: function(response){
+                      if(response=="success")
+                      {
+                      console.log(response);
+    window.location.href = "/";
+                      }
+}
+                });  
+      swal.fire(
+      'Success!',
+      'You are successfully has been sign out from the system.',
+      'success'
+    )
+  } else if (
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swal.fire(
+      'Cancelled',
+      'Logout cancelled.',
+      'error'
+    )
+  }
+})
+}
+</script>

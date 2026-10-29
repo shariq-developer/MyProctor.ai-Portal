@@ -1,0 +1,59 @@
+<<<<<<< HEAD
+node_modules/
+dist/
+html&css/
+.temp/
+css/
+*.zip
+models/yolov3.weights
+__MACOSX/
+assets/
+src/
+questions/
+volt/
+gulpfile.js
+coco models/
+eye_tracking/
+face_detection/
+gaze_tracking
+flask_session
+out/
+static/html/
+static/vendor/
+.vscode
+
+# Python environment and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+=======
+
+# MyProctor.ai specific
+.venv/
+__pycache__/
+>>>>>>> 5a4ae3f2e63708b353c6a78628351b73dc45d8f3
+.env
+.env.*
+!.env.example
+
+<<<<<<< HEAD
+# Large AI model files
+models/pose_model/variables/
+models/res10_300x300_ssd_iter_140000.caffemodel
+
+# Keep website CSS tracked
+!static/
+!static/css/
+!static/css/**
+=======
+# AI model files - exclude large weights
+models/pose_model/variables/
+models/res10_300x300_ssd_iter_140000.caffemodel
+
+
+.venv/
+__pycache__/
+models/pose_model/variables/
+models/res10_300x300_ssd_iter_140000.caffemodel
+>>>>>>> 5a4ae3f2e63708b353c6a78628351b73dc45d8f3
